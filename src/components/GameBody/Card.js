@@ -1,7 +1,7 @@
 export default function Card(props) {
-  const { url } = props;
+  const { url, handleClick, id } = props;
   return (
-    <div>
+    <div onClick={handleClick.bind(null, id)}>
       <img src={url} alt="a cute cat" />
     </div>
   );
