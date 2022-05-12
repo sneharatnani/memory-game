@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "../styles.css";
 import ScoreBoard from "./GameBody/ScoreBoard.js";
 import Modal from "./Modal.js";
 import Card from "./GameBody/Card.js";
@@ -92,7 +91,7 @@ export default function Main() {
   return (
     <main>
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
-      <section className="grid">{cards}</section>
+      <section>{cards}</section>
       {result && <Modal score={currentScore} resetGame={restartGame} />}
       {result && <div className="overlay"></div>}
     </main>
