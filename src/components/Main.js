@@ -4,9 +4,9 @@ import Modal from "./Modal.js";
 import Card from "./GameBody/Card.js";
 
 export default function Main() {
-  // state to change the url of images
+  // state to change the emoji
   const [allCards, setAllCards] = useState(shuffleArr());
-  // keep record of the clicked img
+  // keep record of the clicked emoji
   const [clicked, setClicked] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
@@ -32,30 +32,30 @@ export default function Main() {
   }, [currentScore]);
 
   function shuffleArr() {
-    const catsArray = [
-      { url: "😂", id: "img1" },
-      { url: "😍", id: "img2" },
-      { url: "😊", id: "img3" },
-      { url: "😭", id: "img4" },
-      { url: "🥰", id: "img5" },
-      { url: "😎", id: "img6" },
-      { url: "😉", id: "img7" },
-      { url: "🤔", id: "img8" },
-      { url: "😋", id: "img9" },
-      { url: "😇", id: "img10" },
-      { url: "😜", id: "img11" },
-      { url: "😒", id: "img12" },
+    const emojiArray = [
+      { emoji: "😂", id: "img1" },
+      { emoji: "😍", id: "img2" },
+      { emoji: "😊", id: "img3" },
+      { emoji: "😭", id: "img4" },
+      { emoji: "🥰", id: "img5" },
+      { emoji: "😎", id: "img6" },
+      { emoji: "😉", id: "img7" },
+      { emoji: "🤔", id: "img8" },
+      { emoji: "😋", id: "img9" },
+      { emoji: "😇", id: "img10" },
+      { emoji: "😜", id: "img11" },
+      { emoji: "😒", id: "img12" },
     ];
-    for (let i = catsArray.length - 1; i > 0; i--) {
+    for (let i = emojiArray.length - 1; i > 0; i--) {
       const random = Math.floor(Math.random() * (i + 1));
-      const temp = catsArray[i];
-      catsArray[i] = catsArray[random];
-      catsArray[random] = temp;
+      const temp = emojiArray[i];
+      emojiArray[i] = emojiArray[random];
+      emojiArray[random] = temp;
     }
-    return catsArray;
+    return emojiArray;
   }
 
-  // handle click on img
+  // handle click on emoji
   function handleClick(id) {
     if (clicked.includes(id)) {
       setResult(true);
