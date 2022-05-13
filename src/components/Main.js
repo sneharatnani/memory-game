@@ -45,18 +45,18 @@ export default function Main() {
 
   function shuffleArr() {
     const catsArray = [
-      { url: cat1, id: "img1" },
-      { url: cat2, id: "img2" },
-      { url: cat3, id: "img3" },
-      { url: cat4, id: "img4" },
-      { url: cat5, id: "img5" },
-      { url: cat6, id: "img6" },
-      { url: cat7, id: "img7" },
-      { url: cat8, id: "img8" },
-      { url: cat9, id: "img9" },
-      { url: cat10, id: "img10" },
-      { url: cat11, id: "img11" },
-      { url: cat12, id: "img12" },
+      { url: "😂", id: "img1" },
+      { url: "😍", id: "img2" },
+      { url: "😊", id: "img3" },
+      { url: "😭", id: "img4" },
+      { url: "🥰", id: "img5" },
+      { url: "😎", id: "img6" },
+      { url: "😉", id: "img7" },
+      { url: "🤔", id: "img8" },
+      { url: "😋", id: "img9" },
+      { url: "😇", id: "img10" },
+      { url: "😜", id: "img11" },
+      { url: "😒", id: "img12" },
     ];
     for (let i = catsArray.length - 1; i > 0; i--) {
       const random = Math.floor(Math.random() * (i + 1));
@@ -89,9 +89,11 @@ export default function Main() {
   }
 
   return (
-    <main>
+    <main className="mx-auto p-4 md:w-3/4">
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
-      <section>{cards}</section>
+      <section className="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-3">
+        {cards}
+      </section>
       {result && <Modal score={currentScore} resetGame={restartGame} />}
       {result && <div className="overlay"></div>}
     </main>

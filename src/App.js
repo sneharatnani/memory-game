@@ -1,8 +1,10 @@
 import Main from "./components/Main.js";
+import Header from "./components/Header.js";
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-center">
+      <Header />
       <Main />
     </div>
   );
