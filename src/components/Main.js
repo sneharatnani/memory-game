@@ -2,18 +2,6 @@ import { useEffect, useState } from "react";
 import ScoreBoard from "./GameBody/ScoreBoard.js";
 import Modal from "./Modal.js";
 import Card from "./GameBody/Card.js";
-import cat1 from "../assets/img/cat1.jpg";
-import cat2 from "../assets/img/cat2.jpg";
-import cat3 from "../assets/img/cat3.jpg";
-import cat4 from "../assets/img/cat4.jpg";
-import cat5 from "../assets/img/cat5.jpg";
-import cat6 from "../assets/img/cat6.jpg";
-import cat7 from "../assets/img/cat7.jpg";
-import cat8 from "../assets/img/cat8.jpg";
-import cat9 from "../assets/img/cat9.jpg";
-import cat10 from "../assets/img/cat10.jpg";
-import cat11 from "../assets/img/cat11.jpg";
-import cat12 from "../assets/img/cat12.jpg";
 
 export default function Main() {
   // state to change the url of images
@@ -89,13 +77,15 @@ export default function Main() {
   }
 
   return (
-    <main className="mx-auto p-4 md:w-3/4">
+    <main className="mx-auto p-4 md:w-3/4 lg:w-3/5">
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
-      <section className="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-3">
+      <section className="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-3 lg:gap-y-6">
         {cards}
       </section>
       {result && <Modal score={currentScore} resetGame={restartGame} />}
-      {result && <div className="overlay"></div>}
+      {result && (
+        <div className="fixed z-10 top-0 bottom-0 left-0 right-0 w-full h-full bg-black opacity-70"></div>
+      )}
     </main>
   );
 }
