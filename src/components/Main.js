@@ -79,7 +79,7 @@ export default function Main() {
   return (
     <main className="mx-auto p-4 md:w-3/4 lg:w-3/5">
       <ScoreBoard currentScore={currentScore} bestScore={bestScore} />
-      <section className="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-3 lg:gap-y-6">
+      <section className="grid grid-cols-2 gap-4 justify-items-center md:grid-cols-3 lg:gap-y-6 2xl:w-[40rem] 2xl:mx-auto">
         {cards}
       </section>
       {result && <Modal score={currentScore} resetGame={restartGame} />}
