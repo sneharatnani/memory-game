@@ -4,14 +4,35 @@ This is a simple memory card game created with ReactJS.
 
 ## What's the game ?
 
-Click each card only once and if clicked twice the game will start over again. Cards will be shuffled after every click. It will show the best score and current score achieved by a player.
+Click each emoji only once and if clicked twice the game will start over again. Emojis will shuffle after every click. Game shows the best and current score achieved by a player.
 
 Play it [here](https://sneharatnani.github.io/memory-game/)
 
 ## Technologies Used
 
-- ReactJS
+- [ReactJS](https://reactjs.org/)
 
-- tailwindcss
+- [tailwind CSS](https://tailwindcss.com/)
 
-- HTML
+- [Jest](https://jestjs.io/)
+
+- [Testing Library](https://testing-library.com/)
+
+### Getting Started
+
+```bash
+# clone repo
+git clone https://github.com/sneharatnani/memory-game.git
+
+# changing directory
+cd memory-game
+
+# installing dependencies
+npm install
+
+# starting server
+npm start
+
+# start testing with Jest
+npm run test
+```
