@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component renders Card component 1`] = `
+<div>
+  <button
+    class="text-6xl bg-violet-100 border block border-violet-300 h-28 w-28  rounded-full hover:shadow-2xl shadow-violet-300"
+  >
+    😂
+  </button>
+</div>
+`;

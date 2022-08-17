@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import ScoreBoard from "./GameBody/ScoreBoard.js";
+import ScoreBoard from "./ScoreBoard.js";
 import Modal from "./Modal.js";
-import Card from "./GameBody/Card.js";
+import Card from "./Card.js";
+import { emojiData } from "../data/emojiData.js";
+import shuffleArr from "../utils/shuffle.js";
 
-export default function Main() {
+export default function Game() {
   // state to change the emoji
-  const [allCards, setAllCards] = useState(shuffleArr());
+  const [allCards, setAllCards] = useState(shuffleArr(emojiData));
   // keep record of the clicked emoji
   const [clicked, setClicked] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
@@ -31,45 +33,20 @@ export default function Main() {
     }
   }, [currentScore]);
 
-  function shuffleArr() {
-    const emojiArray = [
-      { emoji: "😂", id: "img1" },
-      { emoji: "😍", id: "img2" },
-      { emoji: "😊", id: "img3" },
-      { emoji: "😭", id: "img4" },
-      { emoji: "🥰", id: "img5" },
-      { emoji: "😎", id: "img6" },
-      { emoji: "😉", id: "img7" },
-      { emoji: "🤔", id: "img8" },
-      { emoji: "😋", id: "img9" },
-      { emoji: "😇", id: "img10" },
-      { emoji: "😜", id: "img11" },
-      { emoji: "😒", id: "img12" },
-    ];
-    for (let i = emojiArray.length - 1; i > 0; i--) {
-      const random = Math.floor(Math.random() * (i + 1));
-      const temp = emojiArray[i];
-      emojiArray[i] = emojiArray[random];
-      emojiArray[random] = temp;
-    }
-    return emojiArray;
-  }
-
   // handle click on emoji
   function handleClick(id) {
     if (clicked.includes(id)) {
       setResult(true);
     } else {
       setClicked((prev) => [...prev, id]);
-      setAllCards(shuffleArr());
+      setAllCards(shuffleArr(emojiData));
     }
   }
-  // create array of card components
+
   const cards = allCards.map((card) => (
     <Card key={card.id} {...card} handleClick={handleClick} />
   ));
 
-  // reset game
   function restartGame() {
     setCurrentScore(0);
     setClicked([]);
@@ -83,9 +60,6 @@ export default function Main() {
         {cards}
       </section>
       {result && <Modal score={currentScore} resetGame={restartGame} />}
-      {result && (
-        <div className="fixed z-10 top-0 bottom-0 left-0 right-0 w-full h-full bg-black opacity-70"></div>
-      )}
     </main>
   );
 }

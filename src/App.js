@@ -1,4 +1,4 @@
-import Main from "./components/Main.js";
+import Game from "./components/Game.js";
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 
@@ -7,7 +7,7 @@ function App() {
     <div className="text-center flex flex-col min-h-screen justify-between font-body">
       <div>
         <Header />
-        <Main />
+        <Game />
       </div>
       <Footer />
     </div>

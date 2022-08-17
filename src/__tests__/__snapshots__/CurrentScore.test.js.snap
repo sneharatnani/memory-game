@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentScore renders CurrentScore 1`] = `
+<div>
+  <div
+    class="bg-yellow-500 text-white font-bold inline-block py-2 w-36 rounded-2xl mr-4 shadow-md shadow-yellow-600"
+  >
+    current score: 
+    5
+  </div>
+</div>
+`;

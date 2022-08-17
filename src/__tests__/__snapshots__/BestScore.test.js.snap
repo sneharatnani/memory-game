@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BestScore component renders BestScore 1`] = `
+<div>
+  <div
+    class="bg-violet-500 text-white font-bold inline-block py-2 w-36 rounded-2xl shadow-md shadow-violet-700"
+  >
+    best score: 
+    5
+  </div>
+</div>
+`;
