@@ -5,13 +5,6 @@ import userEvent from "@testing-library/user-event";
 const mockHandleClick = jest.fn();
 
 describe("Card component", () => {
-  it("renders Card component", () => {
-    const { container } = render(
-      <Card handleClick={mockHandleClick} emoji="😂" />
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it("calls handleClick correctly", () => {
     render(<Card handleClick={mockHandleClick} emoji="😂" />);
     const button = screen.getByRole("button");

@@ -5,13 +5,6 @@ import Modal from "../components/Modal.js";
 const mockResetGame = jest.fn();
 
 describe("Modal component", () => {
-  it("renders Modal", () => {
-    const { container } = render(
-      <Modal resetGame={mockResetGame} score={10} />
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it("calls resetGame correctly", () => {
     render(<Modal resetGame={mockResetGame} score={10} />);
     userEvent.click(screen.getByRole("button"));
