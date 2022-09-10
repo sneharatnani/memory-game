@@ -1,12 +1,14 @@
 # Memory-Game
 
+![image](./src/assets/img/memory-game.png)
+
 This is a simple memory card game created with ReactJS.
 
 ## What's the game ?
 
 Click each emoji only once and if clicked twice the game will start over again. Emojis will shuffle after every click. Game shows the best and current score achieved by a player.
 
-Play it [here](https://sneharatnani.github.io/memory-game/)
+**Play it [here](https://sneharatnani.github.io/memory-game/)**
 
 ## Technologies Used
 
